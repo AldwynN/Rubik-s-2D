@@ -2,3 +2,12 @@
     margin: 0px;
     padding: 0px;
 }
+.sectDroite{
+    border: 1px solid black;   
+    height: 600px;
+}
+
+.sectGauche{
+    border: 1px solid black;  
+    height: 600px;
+}
