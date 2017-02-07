@@ -2,6 +2,11 @@
     margin: 0px;
     padding: 0px;
 }
+
+#rubiks2D{
+    display: block
+}
+
 .sectDroite{
     border: 1px solid black;   
 }
