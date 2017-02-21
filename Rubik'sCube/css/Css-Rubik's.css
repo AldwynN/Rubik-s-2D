@@ -4,10 +4,19 @@
 }
 .sectDroite{
     border: 1px solid black;   
-    height: 600px;
 }
 
 .sectGauche{
     border: 1px solid black;  
-    height: 600px;
+    padding: 10px;
+    text-align: center;
+}
+
+#footer{
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+body{
+    padding-top: 60px;
 }
