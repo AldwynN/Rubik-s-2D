@@ -142,8 +142,8 @@ function DrawRubik() {
     MakeGrid(3 * offset + 6 * tailleCarre, 2 * offset + 3 * tailleCarre, tailleCarre, nbCarreX, nbCarreY);
     DrawFace(3 * offset + 6 * tailleCarre, 2 * offset + 3 * tailleCarre, cube.faceRight.face);
     //GridBack (Yellow)
-    MakeGrid(4 * offset + 9 * tailleCarre, 2 * offset + 3 * tailleCarre, tailleCarre, nbCarreX, nbCarreY);
-    DrawFace(4 * offset + 9 * tailleCarre, 2 * offset + 3 * tailleCarre, cube.faceBack.face);
+    MakeGrid(3 * offset + 6 * tailleCarre, 3 * offset + 6 * tailleCarre, tailleCarre, nbCarreX, nbCarreY);
+    DrawFace(3 * offset + 6 * tailleCarre, 3 * offset + 6 * tailleCarre, cube.faceBack.face);
     //GridTop (Red)
     MakeGrid(2 * offset + 3 * tailleCarre, 1 * offset, tailleCarre, nbCarreX, nbCarreY);
     DrawFace(2 * offset + 3 * tailleCarre, 1 * offset, cube.faceUp.face);
@@ -192,7 +192,7 @@ function DrawFace(offsetX, offsetY, face){
                     break;
             }
             
-            context.fillRect(offsetX + tailleCarre * x, offsetY + tailleCarre * y, tailleCarre, tailleCarre);
+            context.fillRect(offsetX + tailleCarre * x +0.5, offsetY + tailleCarre * y +0.5, tailleCarre -0.5, tailleCarre -0.5);
             context.fill();
         }
     }
