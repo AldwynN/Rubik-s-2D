@@ -1,0 +1,27 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+section{
+    padding: 10px 20px;
+}
+
+.sect{
+    border: 1px solid black;   
+    height: 600px;
+}
+
+.inlineBlock{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#footer{
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+body{
+    padding-top: 60px;
+}
