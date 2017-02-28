@@ -2,19 +2,22 @@
     margin: 0px;
     padding: 0px;
 }
-
-section{
-    padding: 10px 20px;
-}
-
-.sect{
+.sectDroite{
     border: 1px solid black;   
     height: 600px;
 }
 
+.sectGauche{
+    border: 1px solid black;  
+    height: 600px;
+}
+
+#rubiks2D{
+    display: block
+}
+
 .inlineBlock{
     display: inline-block;
-    vertical-align: top;
 }
 
 #footer{

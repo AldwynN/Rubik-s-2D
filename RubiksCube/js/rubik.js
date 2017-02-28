@@ -36,7 +36,7 @@ class Cube {
         this.faceFront.fill(1);
         this.faceRight = new Face(3 * offset + 6 * tailleCarre, 2 * offset + 3 * tailleCarre, tailleCarre, 3, 3, "Right");
         this.faceRight.fill(2);
-        this.faceBack = new Face(3 * offset + 6 * tailleCarre, 3 * offset + 6 * tailleCarre, tailleCarre, 3, 3, "Back");
+        this.faceBack = new Face(4 * offset + 9 * tailleCarre, 2 * offset + 3 * tailleCarre, tailleCarre, 3, 3, "Back");
         this.faceBack.fill(3);
         this.faceUp = new Face(2 * offset + 3 * tailleCarre, 1 * offset, tailleCarre, 3, 3, "Up");
         this.faceUp.fill(4);
@@ -177,26 +177,25 @@ class Cube {
                     this.faceBack.face[0][1] = tempFace[1][2];
 
                     var temp = new Array(3);
-                    temp[0] = this.faceRight.face[0][0];
-                    temp[1] = this.faceRight.face[1][0];
-                    temp[2] = this.faceRight.face[2][0];
-
-                    this.faceRight.face[0][0] = this.faceBack.face[0][0];
-                    this.faceRight.face[1][0] = this.faceBack.face[1][0];
-                    this.faceRight.face[2][0] = this.faceBack.face[2][0];
-
-//TODO
-                    this.faceUp.face[0][0] = this.faceRight.face[2][0];
-                    this.faceUp.face[1][0] = this.faceRight.face[2][1];
-                    this.faceUp.face[2][0] = this.faceRight.face[2][2];
+                    temp[0] = this.faceRight.face[2][0];
+                    temp[1] = this.faceRight.face[2][1];
+                    temp[2] = this.faceRight.face[2][2];
 
                     this.faceRight.face[2][0] = this.faceDown.face[2][2];
                     this.faceRight.face[2][1] = this.faceDown.face[1][2];
                     this.faceRight.face[2][2] = this.faceDown.face[0][2];
 
-                    this.faceDown.face[0][2] = temp[0];
-                    this.faceDown.face[1][2] = temp[1];
-                    this.faceDown.face[2][2] = temp[2];
+                    this.faceDown.face[0][2] = this.faceLeft.face[0][0];
+                    this.faceDown.face[1][2] = this.faceLeft.face[0][1];
+                    this.faceDown.face[2][2] = this.faceLeft.face[0][2];
+
+                    this.faceLeft.face[0][0] = this.faceUp.face[2][0];
+                    this.faceLeft.face[0][1] = this.faceUp.face[1][0];
+                    this.faceLeft.face[0][2] = this.faceUp.face[0][0];
+
+                    this.faceUp.face[0][0] = temp[0];
+                    this.faceUp.face[1][0] = temp[1];
+                    this.faceUp.face[2][0] = temp[2];
                 } else {
                     this.turnFace("Back");
                     this.turnFace("Back");
@@ -204,7 +203,7 @@ class Cube {
                 }
                 break;
             case "Up":
-                                if (clockwise) {
+                if (clockwise) {
                     var tempFace = JSON.parse(JSON.stringify(this.faceUp.face));
 
                     this.faceUp.face[0][0] = tempFace[0][2];
@@ -218,24 +217,24 @@ class Cube {
 
                     var temp = new Array(3);
                     temp[0] = this.faceLeft.face[0][0];
-                    temp[1] = this.faceLeft.face[0][1];
-                    temp[2] = this.faceLeft.face[0][2];
+                    temp[1] = this.faceLeft.face[1][0];
+                    temp[2] = this.faceLeft.face[2][0];
 
-                    this.faceLeft.face[0][0] = this.faceUp.face[2][0];
-                    this.faceLeft.face[0][1] = this.faceUp.face[1][0];
-                    this.faceLeft.face[0][2] = this.faceUp.face[0][0];
+                    this.faceLeft.face[0][0] = this.faceFront.face[0][0];
+                    this.faceLeft.face[1][0] = this.faceFront.face[1][0];
+                    this.faceLeft.face[2][0] = this.faceFront.face[2][0];
 
-                    this.faceUp.face[0][0] = this.faceRight.face[2][0];
-                    this.faceUp.face[1][0] = this.faceRight.face[2][1];
-                    this.faceUp.face[2][0] = this.faceRight.face[2][2];
+                    this.faceFront.face[0][0] = this.faceRight.face[0][0];
+                    this.faceFront.face[1][0] = this.faceRight.face[1][0];
+                    this.faceFront.face[2][0] = this.faceRight.face[2][0];
 
-                    this.faceRight.face[2][0] = this.faceDown.face[2][2];
-                    this.faceRight.face[2][1] = this.faceDown.face[1][2];
-                    this.faceRight.face[2][2] = this.faceDown.face[0][2];
+                    this.faceRight.face[0][0] = this.faceBack.face[0][0];
+                    this.faceRight.face[1][0] = this.faceBack.face[1][0];
+                    this.faceRight.face[2][0] = this.faceBack.face[2][0];
 
-                    this.faceDown.face[0][2] = temp[0];
-                    this.faceDown.face[1][2] = temp[1];
-                    this.faceDown.face[2][2] = temp[2];
+                    this.faceBack.face[0][0] = temp[0];
+                    this.faceBack.face[1][0] = temp[1];
+                    this.faceBack.face[2][0] = temp[2];
                 } else {
                     this.turnFace("Up");
                     this.turnFace("Up");
@@ -244,7 +243,41 @@ class Cube {
                 break;
             case "Down":
                 if (clockwise) {
+                    var tempFace = JSON.parse(JSON.stringify(this.faceDown.face));
 
+                    this.faceDown.face[0][0] = tempFace[0][2];
+                    this.faceDown.face[1][0] = tempFace[0][1];
+                    this.faceDown.face[2][0] = tempFace[0][0];
+                    this.faceDown.face[2][1] = tempFace[1][0];
+                    this.faceDown.face[2][2] = tempFace[2][0];
+                    this.faceDown.face[1][2] = tempFace[2][1];
+                    this.faceDown.face[0][2] = tempFace[2][2];
+                    this.faceDown.face[0][1] = tempFace[1][2];
+
+                                        var temp = new Array(3);
+                    temp[0] = this.faceLeft.face[0][2];
+                    temp[1] = this.faceLeft.face[1][2];
+                    temp[2] = this.faceLeft.face[2][2];
+
+                    this.faceLeft.face[0][2] = this.faceBack.face[0][2];
+                    this.faceLeft.face[1][2] = this.faceBack.face[1][2];
+                    this.faceLeft.face[2][2] = this.faceBack.face[2][2];
+
+                    this.faceBack.face[0][2] = this.faceRight.face[0][2];
+                    this.faceBack.face[1][2] = this.faceRight.face[1][2];
+                    this.faceBack.face[2][2] = this.faceRight.face[2][2];
+
+                    this.faceRight.face[0][2] = this.faceFront.face[0][2];
+                    this.faceRight.face[1][2] = this.faceFront.face[1][2];
+                    this.faceRight.face[2][2] = this.faceFront.face[2][2];
+
+                    this.faceFront.face[0][2] = temp[0];
+                    this.faceFront.face[1][2] = temp[1];
+                    this.faceFront.face[2][2] = temp[2];
+                } else {
+                    this.turnFace("Down");
+                    this.turnFace("Down");
+                    this.turnFace("Down");
                 }
                 break;
     }
@@ -255,7 +288,7 @@ class Cube {
 var canvas = document.getElementById('rubiks2D');
 var context = canvas.getContext('2d');
 var tailleCarre = 20;
-var offset = 30;
+var offset = 2;
 var cube = new Cube(tailleCarre, offset);
 var nbCarreX = 3;
 var nbCarreY = 3;
