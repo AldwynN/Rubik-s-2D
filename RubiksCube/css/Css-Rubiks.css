@@ -4,16 +4,16 @@
 }
 .sectDroite{
     border: 1px solid black;   
-    height: 600px;
+    height: 750px; 
 }
 
 .sectGauche{
     border: 1px solid black;  
-    height: 600px;
+    height: 200px;
 }
 
 #rubiks2D{
-    display: block
+    display: block;
 }
 
 .inlineBlock{
@@ -26,8 +26,17 @@
     margin-top: 5px;
 }
 body{
-    padding-top: 60px;
+   // padding-top: 60px;
 }
 .article{
-    padding-left: 5px;
+    padding-left: 15px;
+}
+.LiP{
+    list-style: none;
+    padding-top: 1px;
+}
+
+div.vignette {
+    float: left;
+    margin: 0px 10px 10px 0px;
 }

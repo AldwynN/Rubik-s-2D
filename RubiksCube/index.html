@@ -11,7 +11,7 @@
         <link rel='stylesheet' href="./css/Css-Rubiks.css">
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -21,12 +21,15 @@
                     </button>
                     <a class="navbar-brand" href="#">Rubik's 2d</a>
                 </div>
-                <div class="collapse navbar-collapse myNavbar" >
+                <div class="collapse navbar-collapse " id="myNavbar" >
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Accueil</a></li>
                         <li><a href="Partie1.html">Partie 1</a></li>
                         <li><a href="Partie2.html">Partie 2</a></li> 
                         <li><a href="Partie3.html">Partie 3</a></li> 
+                        <li><a href="Partie4.html">Partie 4</a></li>
+                        <li><a href="Partie5.html">Partie 5</a></li> 
+                        <li><a href="Partie6.html">Partie 6</a></li> 
                     </ul>
                     <!--
                     Ajouter si besoin.
@@ -39,36 +42,53 @@
             </div>
         </nav>
         <div class="row">
-            <!--<div class="col-xs-1 col-md-1"></div>-->
-            <div class="col-xs-9 col-md-6 sectGauche">
-                <!--<image src="http://www.comparestoreprices.co.uk/images/dr/drumond-park-original-rubiks-cube.jpg"  alt="test" class="img-responsive inlineBlock">-->
-                <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
-            </div>
-            <div class="col-xs-9 col-md-6 sectDroite">
+            <div class="col-xs-12 col-md-6 sectDroite">
                 <section>
                     <article class="article">
                         <h1>Présentation !</h1>
                         <p>
                             Bienvenue sur notre site "Rubik's 2d", nous allons vous aider à la réalisation de votre Rubik's cube 3x3.
+                      </p>
+                            <h3>Des problèmes de navigation ?</h3>
+                            <p>
+                            Si vous n'arrivez pas à voir les cubes animés de ce site, il s'agit probablement d'un souci de compatibilité WEBGL. Dans ce cas, suivez ce lien pour tester l'installation de WEBGL dans votre navigateur.
+                            Si l'utilisation d'Internet Explorer vous pose problème, nous vous proposons de cliquer sur le lien suivant pour <a href="https://www.mozilla.org/fr/firefox/new/">installer Firefox</a>
                         </p>
                         <h3>Résumé</h3>
                         <p>
                             Nous allons vous présenter les différentes parties pour résoudre un rubik's cube.
                         </p>
-                        
+
                         <h3>Les différentes parties d'une résolution :</h3>
                         <ul>
-                            <li>Faire une croix avec une couleur</li>
-                            <li>Faire la première face</li>
-                            <li>Faire le deuxième étages</li>
-                            <li>Faire la croix avec la couleur à l'opposé de la premiere</li>
-                            <li>Tourner les coins</li>
-                            <li>Faire la dernière formule</li>
+                            <li class="LiP"><a href="Partie1.html">Faire une croix avec une couleur</a></li>
+                            <li class="LiP"><a href="Partie2.html">Faire la première face</a></li>
+                            <li class="LiP"><a href="Partie3.html">Faire le deuxième étages</a></li>
+                            <li class="LiP"><a href="Partie4.html">Faire la croix avec la couleur à l'opposé de la premiere</a></li>
+                            <li class="LiP"><a href="Partie5.html">Tourner les coins</a></li>
+                            <li class="LiP"><a href="Partie6.html">Faire la dernière formule</a></li>                         
                         </ul>
+                        <h2 id="Les_webmasters">Les webmasters</h2>
+                        <div class="vignette" style="width: 40%;">
+                            <strong>Fernandes</strong>
+                        </div>
+                        <div class="vignette" style="width: 40%;">
+                            <strong>Perreti</strong>
+                        </div>
+                        <div class="vignette" style="width: 40%;">
+                            <strong>Perrin</strong>
+                        </div>
+                        
+                        
                     </article>
                 </section>
+
             </div>
             <!--<div class="col-xs-1 col-md-1"></div>-->
+            <div class="col-xs-12 col-md-6 sectGauche">
+                <!--<image src="http://www.comparestoreprices.co.uk/images/dr/drumond-park-original-rubiks-cube.jpg"  alt="test" class="img-responsive inlineBlock">-->
+                <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
+            </div>
         </div>
         <div class="row">
             <!--<div class="col-xs-1 col-md-1"></div>-->
