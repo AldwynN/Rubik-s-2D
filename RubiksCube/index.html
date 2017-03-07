@@ -21,7 +21,7 @@
                     </button>
                     <a class="navbar-brand" href="#">Rubik's 2d</a>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
+                <div class="collapse navbar-collapse myNavbar" >
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Accueil</a></li>
                         <li><a href="Partie1.html">Partie 1</a></li>
@@ -40,21 +40,31 @@
         </nav>
         <div class="row">
             <!--<div class="col-xs-1 col-md-1"></div>-->
-            <div class="col-xs-12 col-md-8 sectGauche">
-                <image src="http://www.comparestoreprices.co.uk/images/dr/drumond-park-original-rubiks-cube.jpg"  alt="test" class="img-responsive inlineBlock">
+            <div class="col-xs-9 col-md-6 sectGauche">
+                <!--<image src="http://www.comparestoreprices.co.uk/images/dr/drumond-park-original-rubiks-cube.jpg"  alt="test" class="img-responsive inlineBlock">-->
                 <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
             </div>
-            <div class="col-xs-6 col-md-4 sectDroite">
+            <div class="col-xs-9 col-md-6 sectDroite">
                 <section>
-                    <article>
+                    <article class="article">
                         <h1>Présentation !</h1>
                         <p>
                             Bienvenue sur notre site "Rubik's 2d", nous allons vous aider à la réalisation de votre Rubik's cube 3x3.
                         </p>
                         <h3>Résumé</h3>
                         <p>
-                            Nous allons vous présenter 
+                            Nous allons vous présenter les différentes parties pour résoudre un rubik's cube.
                         </p>
+                        
+                        <h3>Les différentes parties d'une résolution :</h3>
+                        <ul>
+                            <li>Faire une croix avec une couleur</li>
+                            <li>Faire la première face</li>
+                            <li>Faire le deuxième étages</li>
+                            <li>Faire la croix avec la couleur à l'opposé de la premiere</li>
+                            <li>Tourner les coins</li>
+                            <li>Faire la dernière formule</li>
+                        </ul>
                     </article>
                 </section>
             </div>
@@ -62,7 +72,7 @@
         </div>
         <div class="row">
             <!--<div class="col-xs-1 col-md-1"></div>-->
-            <div class="col-xs-12 col-md-12" id="footer">
+            <div class="col-xs-12 col-md-12 myFooter" >
                 <footer><i><b>&COPY;Rubik's-Peretti-Perrin-Fernandes-CFPT-2017</b></i></footer>
             </div>
             <!--<div class="col-xs-1 col-md-1"></div>-->
