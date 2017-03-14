@@ -49,7 +49,7 @@ class Cube {
             case "Front":
                 if (clockwise) {
                     var tempFace = JSON.parse(JSON.stringify(this.faceFront.face));
-                    
+
                     this.faceFront.face[0][0] = tempFace[2][0];
                     this.faceFront.face[1][0] = tempFace[2][1];
                     this.faceFront.face[2][0] = tempFace[2][2];
@@ -58,7 +58,7 @@ class Cube {
                     this.faceFront.face[1][2] = tempFace[0][1];
                     this.faceFront.face[0][2] = tempFace[0][0];
                     this.faceFront.face[0][1] = tempFace[1][0];
-                    
+
                     var tempFace = JSON.parse(JSON.stringify(this.faceBack.face));
 
                     this.faceBack.face[0][0] = tempFace[0][2];
@@ -71,7 +71,7 @@ class Cube {
                     this.faceBack.face[0][1] = tempFace[1][2];
 
                     var tempFace = JSON.parse(JSON.stringify(this.faceUp.face));
-                    
+
                     this.faceUp.face[0][0] = this.faceRight.face[2][0];
                     this.faceUp.face[0][1] = this.faceRight.face[1][0];
                     this.faceUp.face[0][2] = this.faceRight.face[0][0];
@@ -81,7 +81,7 @@ class Cube {
                     this.faceUp.face[2][0] = this.faceRight.face[2][2];
                     this.faceUp.face[2][1] = this.faceRight.face[1][2];
                     this.faceUp.face[2][2] = this.faceRight.face[0][2];
-                    
+
                     this.faceRight.face[0][0] = this.faceDown.face[2][0];
                     this.faceRight.face[0][1] = this.faceDown.face[1][0];
                     this.faceRight.face[0][2] = this.faceDown.face[0][0];
@@ -91,7 +91,7 @@ class Cube {
                     this.faceRight.face[2][0] = this.faceDown.face[2][2];
                     this.faceRight.face[2][1] = this.faceDown.face[1][2];
                     this.faceRight.face[2][2] = this.faceDown.face[0][2];
-                    
+
                     this.faceDown.face[0][0] = this.faceLeft.face[2][0];
                     this.faceDown.face[0][1] = this.faceLeft.face[1][0];
                     this.faceDown.face[0][2] = this.faceLeft.face[0][0];
@@ -101,7 +101,7 @@ class Cube {
                     this.faceDown.face[2][0] = this.faceLeft.face[2][2];
                     this.faceDown.face[2][1] = this.faceLeft.face[1][2];
                     this.faceDown.face[2][2] = this.faceLeft.face[0][2];
-                    
+
                     this.faceLeft.face[0][0] = tempFace[2][0];
                     this.faceLeft.face[0][1] = tempFace[1][0];
                     this.faceLeft.face[0][2] = tempFace[0][0];
@@ -129,9 +129,9 @@ class Cube {
                     this.faceUp.face[1][2] = tempFace[2][1];
                     this.faceUp.face[0][2] = tempFace[2][2];
                     this.faceUp.face[0][1] = tempFace[1][2];
-                    
+
                     var tempFace = JSON.parse(JSON.stringify(this.faceDown.face));
-                    
+
                     this.faceDown.face[0][0] = tempFace[2][0];
                     this.faceDown.face[1][0] = tempFace[2][1];
                     this.faceDown.face[2][0] = tempFace[2][2];
@@ -142,7 +142,7 @@ class Cube {
                     this.faceDown.face[0][1] = tempFace[1][0];
 
                     var tempFace = JSON.parse(JSON.stringify(this.faceFront.face));
-                    
+
                     this.faceFront.face[0][0] = this.faceRight.face[0][0];
                     this.faceFront.face[0][1] = this.faceRight.face[0][1];
                     this.faceFront.face[0][2] = this.faceRight.face[0][2];
@@ -152,7 +152,7 @@ class Cube {
                     this.faceFront.face[2][0] = this.faceRight.face[2][0];
                     this.faceFront.face[2][1] = this.faceRight.face[2][1];
                     this.faceFront.face[2][2] = this.faceRight.face[2][2];
-                    
+
                     this.faceRight.face[0][0] = this.faceBack.face[0][0];
                     this.faceRight.face[0][1] = this.faceBack.face[0][1];
                     this.faceRight.face[0][2] = this.faceBack.face[0][2];
@@ -162,7 +162,7 @@ class Cube {
                     this.faceRight.face[2][0] = this.faceBack.face[2][0];
                     this.faceRight.face[2][1] = this.faceBack.face[2][1];
                     this.faceRight.face[2][2] = this.faceBack.face[2][2];
-                    
+
                     this.faceBack.face[0][0] = this.faceLeft.face[0][0];
                     this.faceBack.face[0][1] = this.faceLeft.face[0][1];
                     this.faceBack.face[0][2] = this.faceLeft.face[0][2];
@@ -172,7 +172,7 @@ class Cube {
                     this.faceBack.face[2][0] = this.faceLeft.face[2][0];
                     this.faceBack.face[2][1] = this.faceLeft.face[2][1];
                     this.faceBack.face[2][2] = this.faceLeft.face[2][2];
-                    
+
                     this.faceLeft.face[0][0] = tempFace[0][0];
                     this.faceLeft.face[0][1] = tempFace[0][1];
                     this.faceLeft.face[0][2] = tempFace[0][2];
@@ -181,14 +181,14 @@ class Cube {
                     this.faceLeft.face[1][2] = tempFace[1][2];
                     this.faceLeft.face[2][0] = tempFace[2][0];
                     this.faceLeft.face[2][1] = tempFace[2][1];
-                    this.faceLeft.face[2][2] = tempFace[2][2];                  
+                    this.faceLeft.face[2][2] = tempFace[2][2];
                 } else {
                     this.turnCube("Up");
                     this.turnCube("Up");
                     this.turnCube("Up");
                 }
                 break;
-        }
+    }
     }
 
     turnFace(nameFace, clockwise = true) {
@@ -441,7 +441,7 @@ var nbCarreX = 3;
 var nbCarreY = 3;
 
 var elements = [cube.faceLeft, cube.faceUp, cube.faceFront, cube.faceDown, cube.faceRight, cube.faceBack];
-
+var ongoingTouches = [];
 if (!canvas)
 {
     alert("Impossible de récupérer le canvas");
@@ -451,7 +451,6 @@ if (!context)
 {
     alert("Impossible de récupérer le context du canvas");
 }
-
 
 context.strokeStyle = "black";
 context.lineWidth = 1;
@@ -465,7 +464,7 @@ function setEvent() {
 
         clickControl(x, y, 0);
     });
-    $('#rubiks2D').bind('contextmenu', function (e) {
+    $("#rubiks2D").bind("contextmenu", function (event) {
         var x = event.pageX - $("#rubiks2D").offset().left;
         var y = event.pageY - $("#rubiks2D").offset().top;
 
@@ -473,6 +472,61 @@ function setEvent() {
         //cancel contextMenu
         return false;
     });
+    var el = document.getElementById("rubiks2D");
+    el.addEventListener("touchstart", handleStart, false);
+    el.addEventListener("touchend", handleEnd, false);
+    el.addEventListener("touchcancel", handleCancel, false);
+}
+
+function handleStart(event) {
+    event.preventDefault();
+    console.log("touchStart");
+    var touches = event.changedTouches;
+
+    for (var i = 0; i < touches.length; i++) {
+        ongoingTouches.push(copyTouch(touches[i]));
+    }
+}
+
+function handleEnd(event) {
+    event.preventDefault();
+    console.log("touchEnd");
+    var touches = event.changedTouches;
+
+    for (var i = 0; i < touches.length; i++) {
+        var idx = ongoingTouchIndexById(touches[i].identifier);
+        if (idx >= 0) {
+            var x = event.pageX - $("#rubiks2D").offset().left;
+            var y = event.pageY - $("#rubiks2D").offset().top;
+
+            clickControl(x, y, 0);
+            ongoingTouches.splice(idx, 1);  // remove it; we're done
+        }
+    }
+}
+
+function handleCancel(event) {
+    event.preventDefault();
+    console.log("touchCancel");
+    var touches = event.changedTouches;
+
+    for (var i = 0; i < touches.length; i++) {
+        var idx = ongoingTouchIndexById(touches[i].identifier);
+        ongoingTouches.splice(idx, 1);  // remove it; we're done
+    }
+}
+
+function copyTouch(touch) {
+    return {identifier: touch.identifier, pageX: touch.pageX, pageY: touch.pageY};
+}
+
+function ongoingTouchIndexById(idToFind) {
+    for (var i = 0; i < ongoingTouches.length; i++) {
+        if (ongoingTouches[i].identifier === idToFind) {
+            return i;
+        }
+    }
+    return -1;    // not found
 }
 
 function clickControl(x, y, click) {
@@ -488,6 +542,10 @@ function clickControl(x, y, click) {
             }
         }
     });
+}
+
+function touchControl() {
+
 }
 
 function DrawRubik() {
