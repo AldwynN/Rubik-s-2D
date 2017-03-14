@@ -44,6 +44,153 @@ class Cube {
         this.faceDown.fill(5);
     }
 
+    turnCube(nameFace, clockwise = true) {
+        switch (nameFace) {
+            case "Front":
+                if (clockwise) {
+                    var tempFace = JSON.parse(JSON.stringify(this.faceFront.face));
+                    
+                    this.faceFront.face[0][0] = tempFace[2][0];
+                    this.faceFront.face[1][0] = tempFace[2][1];
+                    this.faceFront.face[2][0] = tempFace[2][2];
+                    this.faceFront.face[2][1] = tempFace[1][2];
+                    this.faceFront.face[2][2] = tempFace[0][2];
+                    this.faceFront.face[1][2] = tempFace[0][1];
+                    this.faceFront.face[0][2] = tempFace[0][0];
+                    this.faceFront.face[0][1] = tempFace[1][0];
+                    
+                    var tempFace = JSON.parse(JSON.stringify(this.faceBack.face));
+
+                    this.faceBack.face[0][0] = tempFace[0][2];
+                    this.faceBack.face[1][0] = tempFace[0][1];
+                    this.faceBack.face[2][0] = tempFace[0][0];
+                    this.faceBack.face[2][1] = tempFace[1][0];
+                    this.faceBack.face[2][2] = tempFace[2][0];
+                    this.faceBack.face[1][2] = tempFace[2][1];
+                    this.faceBack.face[0][2] = tempFace[2][2];
+                    this.faceBack.face[0][1] = tempFace[1][2];
+
+                    var tempFace = JSON.parse(JSON.stringify(this.faceUp.face));
+                    
+                    this.faceUp.face[0][0] = this.faceRight.face[2][0];
+                    this.faceUp.face[0][1] = this.faceRight.face[1][0];
+                    this.faceUp.face[0][2] = this.faceRight.face[0][0];
+                    this.faceUp.face[1][0] = this.faceRight.face[2][1];
+                    this.faceUp.face[1][1] = this.faceRight.face[1][1];
+                    this.faceUp.face[1][2] = this.faceRight.face[0][1];
+                    this.faceUp.face[2][0] = this.faceRight.face[2][2];
+                    this.faceUp.face[2][1] = this.faceRight.face[1][2];
+                    this.faceUp.face[2][2] = this.faceRight.face[0][2];
+                    
+                    this.faceRight.face[0][0] = this.faceDown.face[2][0];
+                    this.faceRight.face[0][1] = this.faceDown.face[1][0];
+                    this.faceRight.face[0][2] = this.faceDown.face[0][0];
+                    this.faceRight.face[1][0] = this.faceDown.face[2][1];
+                    this.faceRight.face[1][1] = this.faceDown.face[1][1];
+                    this.faceRight.face[1][2] = this.faceDown.face[0][1];
+                    this.faceRight.face[2][0] = this.faceDown.face[2][2];
+                    this.faceRight.face[2][1] = this.faceDown.face[1][2];
+                    this.faceRight.face[2][2] = this.faceDown.face[0][2];
+                    
+                    this.faceDown.face[0][0] = this.faceLeft.face[2][0];
+                    this.faceDown.face[0][1] = this.faceLeft.face[1][0];
+                    this.faceDown.face[0][2] = this.faceLeft.face[0][0];
+                    this.faceDown.face[1][0] = this.faceLeft.face[2][1];
+                    this.faceDown.face[1][1] = this.faceLeft.face[1][1];
+                    this.faceDown.face[1][2] = this.faceLeft.face[0][1];
+                    this.faceDown.face[2][0] = this.faceLeft.face[2][2];
+                    this.faceDown.face[2][1] = this.faceLeft.face[1][2];
+                    this.faceDown.face[2][2] = this.faceLeft.face[0][2];
+                    
+                    this.faceLeft.face[0][0] = tempFace[2][0];
+                    this.faceLeft.face[0][1] = tempFace[1][0];
+                    this.faceLeft.face[0][2] = tempFace[0][0];
+                    this.faceLeft.face[1][0] = tempFace[2][1];
+                    this.faceLeft.face[1][1] = tempFace[1][1];
+                    this.faceLeft.face[1][2] = tempFace[0][1];
+                    this.faceLeft.face[2][0] = tempFace[2][2];
+                    this.faceLeft.face[2][1] = tempFace[1][2];
+                    this.faceLeft.face[2][2] = tempFace[0][2];
+                } else {
+                    this.turnCube("Front");
+                    this.turnCube("Front");
+                    this.turnCube("Front");
+                }
+                break;
+            case "Up":
+                if (clockwise) {
+                    var tempFace = JSON.parse(JSON.stringify(this.faceUp.face));
+
+                    this.faceUp.face[0][0] = tempFace[0][2];
+                    this.faceUp.face[1][0] = tempFace[0][1];
+                    this.faceUp.face[2][0] = tempFace[0][0];
+                    this.faceUp.face[2][1] = tempFace[1][0];
+                    this.faceUp.face[2][2] = tempFace[2][0];
+                    this.faceUp.face[1][2] = tempFace[2][1];
+                    this.faceUp.face[0][2] = tempFace[2][2];
+                    this.faceUp.face[0][1] = tempFace[1][2];
+                    
+                    var tempFace = JSON.parse(JSON.stringify(this.faceDown.face));
+                    
+                    this.faceDown.face[0][0] = tempFace[2][0];
+                    this.faceDown.face[1][0] = tempFace[2][1];
+                    this.faceDown.face[2][0] = tempFace[2][2];
+                    this.faceDown.face[2][1] = tempFace[1][2];
+                    this.faceDown.face[2][2] = tempFace[0][2];
+                    this.faceDown.face[1][2] = tempFace[0][1];
+                    this.faceDown.face[0][2] = tempFace[0][0];
+                    this.faceDown.face[0][1] = tempFace[1][0];
+
+                    var tempFace = JSON.parse(JSON.stringify(this.faceFront.face));
+                    
+                    this.faceFront.face[0][0] = this.faceRight.face[0][0];
+                    this.faceFront.face[0][1] = this.faceRight.face[0][1];
+                    this.faceFront.face[0][2] = this.faceRight.face[0][2];
+                    this.faceFront.face[1][0] = this.faceRight.face[1][0];
+                    this.faceFront.face[1][1] = this.faceRight.face[1][1];
+                    this.faceFront.face[1][2] = this.faceRight.face[1][2];
+                    this.faceFront.face[2][0] = this.faceRight.face[2][0];
+                    this.faceFront.face[2][1] = this.faceRight.face[2][1];
+                    this.faceFront.face[2][2] = this.faceRight.face[2][2];
+                    
+                    this.faceRight.face[0][0] = this.faceBack.face[0][0];
+                    this.faceRight.face[0][1] = this.faceBack.face[0][1];
+                    this.faceRight.face[0][2] = this.faceBack.face[0][2];
+                    this.faceRight.face[1][0] = this.faceBack.face[1][0];
+                    this.faceRight.face[1][1] = this.faceBack.face[1][1];
+                    this.faceRight.face[1][2] = this.faceBack.face[1][2];
+                    this.faceRight.face[2][0] = this.faceBack.face[2][0];
+                    this.faceRight.face[2][1] = this.faceBack.face[2][1];
+                    this.faceRight.face[2][2] = this.faceBack.face[2][2];
+                    
+                    this.faceBack.face[0][0] = this.faceLeft.face[0][0];
+                    this.faceBack.face[0][1] = this.faceLeft.face[0][1];
+                    this.faceBack.face[0][2] = this.faceLeft.face[0][2];
+                    this.faceBack.face[1][0] = this.faceLeft.face[1][0];
+                    this.faceBack.face[1][1] = this.faceLeft.face[1][1];
+                    this.faceBack.face[1][2] = this.faceLeft.face[1][2];
+                    this.faceBack.face[2][0] = this.faceLeft.face[2][0];
+                    this.faceBack.face[2][1] = this.faceLeft.face[2][1];
+                    this.faceBack.face[2][2] = this.faceLeft.face[2][2];
+                    
+                    this.faceLeft.face[0][0] = tempFace[0][0];
+                    this.faceLeft.face[0][1] = tempFace[0][1];
+                    this.faceLeft.face[0][2] = tempFace[0][2];
+                    this.faceLeft.face[1][0] = tempFace[1][0];
+                    this.faceLeft.face[1][1] = tempFace[1][1];
+                    this.faceLeft.face[1][2] = tempFace[1][2];
+                    this.faceLeft.face[2][0] = tempFace[2][0];
+                    this.faceLeft.face[2][1] = tempFace[2][1];
+                    this.faceLeft.face[2][2] = tempFace[2][2];                  
+                } else {
+                    this.turnCube("Up");
+                    this.turnCube("Up");
+                    this.turnCube("Up");
+                }
+                break;
+        }
+    }
+
     turnFace(nameFace, clockwise = true) {
         switch (nameFace) {
             case "Left":
@@ -254,7 +401,7 @@ class Cube {
                     this.faceDown.face[0][2] = tempFace[2][2];
                     this.faceDown.face[0][1] = tempFace[1][2];
 
-                                        var temp = new Array(3);
+                    var temp = new Array(3);
                     temp[0] = this.faceLeft.face[0][2];
                     temp[1] = this.faceLeft.face[1][2];
                     temp[2] = this.faceLeft.face[2][2];
