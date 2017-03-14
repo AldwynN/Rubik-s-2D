@@ -5,11 +5,13 @@
 .sectDroite{
     border: 1px solid black;   
     height: 750px; 
+    padding-right: 26px;
 }
 
 .sectGauche{
     border: 1px solid black;  
     height: 200px;
+    margin-right: 30px;
 }
 
 #rubiks2D{

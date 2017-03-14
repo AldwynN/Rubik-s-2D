@@ -11,7 +11,7 @@
         <link rel='stylesheet' href="./css/Css-Rubiks.css">
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -24,12 +24,14 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Accueil</a></li>
-                        <li><a href="Partie1.html">Partie 1</a></li>
-                        <li class="active"><a href="#">Partie 2</a></li> 
+                        <li><a href="Partie1.html">Partie 1</a></li> 
+                        <li class="active"><a href="#">Partie 2</a></li>                       
                         <li><a href="Partie3.html">Partie 3</a></li>
-                        <li><a href="Partie4.html">Partie 4</a></li>
-                        <li><a href="Partie5.html">Partie 5</a></li> 
+                        <li><a href="Partie4.html">Partie 4</a></li> 
+                        <li><a href="Partie5.html">Partie 5</a></li>
                         <li><a href="Partie6.html">Partie 6</a></li> 
+                        
+                        
                     </ul>
                     <!--
                     Ajouter si besoin.
@@ -43,18 +45,23 @@
         </nav>
         <div class="row">
             <!--<div class="col-xs-1 col-md-1"></div>-->
-            <div class="col-xs-9 col-md-6 sectGauche">
+            
+            <div class="col-xs-12 col-md-6 sectDroite">
+                <section>
+                    <article class="article">
+                        <h2>Faire les coins(les couronnes)</h2>
+                        <p>
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </article>
+                </section>
+                
+            </div>
+            <!--<div class="col-xs-1 col-md-1"></div>-->
+            <div class="col-xs-12 col-md-6 sectGauche">
                 <!--<image src="http://www.comparestoreprices.co.uk/images/dr/drumond-park-original-rubiks-cube.jpg"  alt="test" class="img-responsive inlineBlock">-->
                 <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
             </div>
-            <div class="col-xs-9 col-md-6 sectDroite">
-                <section>
-                    <article class="article">
-                        <h1>Partie 2 !</h1>
-                    </article>
-                </section>
-            </div>
-            <!--<div class="col-xs-1 col-md-1"></div>-->
         </div>
         <div class="row">
             <!--<div class="col-xs-1 col-md-1"></div>-->
