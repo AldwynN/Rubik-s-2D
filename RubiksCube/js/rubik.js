@@ -434,7 +434,7 @@ class Cube {
 
 var canvas = document.getElementById('rubiks2D');
 var context = canvas.getContext('2d');
-var tailleCarre = 20;
+var tailleCarre = 25;
 var offset = 2;
 var cube = new Cube(tailleCarre, offset);
 var nbCarreX = 3;
@@ -464,7 +464,7 @@ function setEvent() {
 
         clickControl(x, y, 0);
     });
-    $("#rubiks2D").bind("contextmenu", function (event) {
+    $("#rubiks2D").off("contextmenu").bind("contextmenu", function (event) {
         var x = event.pageX - $("#rubiks2D").offset().left;
         var y = event.pageY - $("#rubiks2D").offset().top;
 
@@ -485,19 +485,23 @@ function handleStart(event) {
 
     for (var i = 0; i < touches.length; i++) {
         ongoingTouches.push(copyTouch(touches[i]));
+        var id = touches[i].identifier;
+        setTimeout(function () {
+            touchControl(id);
+        }, 500);
     }
 }
 
 function handleEnd(event) {
     event.preventDefault();
-    console.log("touchEnd");
     var touches = event.changedTouches;
 
     for (var i = 0; i < touches.length; i++) {
         var idx = ongoingTouchIndexById(touches[i].identifier);
         if (idx >= 0) {
-            var x = event.pageX - $("#rubiks2D").offset().left;
-            var y = event.pageY - $("#rubiks2D").offset().top;
+            console.log("touchEnd");
+            var x = ongoingTouches[idx].pageX - $("#rubiks2D").offset().left;
+            var y = ongoingTouches[idx].pageY - $("#rubiks2D").offset().top;
 
             clickControl(x, y, 0);
             ongoingTouches.splice(idx, 1);  // remove it; we're done
@@ -544,8 +548,16 @@ function clickControl(x, y, click) {
     });
 }
 
-function touchControl() {
+function touchControl(id) {
+    console.log("touchControl");
+    var idx = ongoingTouchIndexById(id);
+    if (idx >= 0) {
+        var x = ongoingTouches[idx].pageX - $("#rubiks2D").offset().left;
+        var y = ongoingTouches[idx].pageY - $("#rubiks2D").offset().top;
+        clickControl(x, y, 2);
 
+        ongoingTouches.splice(idx, 1);  // remove it; we're done
+    }
 }
 
 function DrawRubik() {
