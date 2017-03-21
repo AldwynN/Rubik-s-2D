@@ -11,7 +11,7 @@
         <link rel='stylesheet' href="./css/Css-Rubiks.css">
     </head>
     <body>
-        <nav class="navbar navbar-inverse row" >
+        <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -21,9 +21,13 @@
                     </button>
                     <a class="navbar-brand" href="#">Rubik's 2d</a>
                 </div>
+<<<<<<< HEAD
                 <div class="collapse navbar-collapse " id="myNavbar" >
+=======
+                <div class="collapse navbar-collapse" id="myNavbar" >
+>>>>>>> asd
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Accueil</a></li>
+                        <li class="active"><a href="#">Accueil</a></li>
                         <li><a href="Partie1.html">Partie 1</a></li>
                         <li><a href="Partie2.html">Partie 2</a></li> 
                         <li><a href="Partie3.html">Partie 3</a></li> 
@@ -41,16 +45,16 @@
                 </div>
             </div>
         </nav>
-        <div class="row" >
-            <div class="col-xs-12 col-md-6">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 sectDroite">
                 <section>
                     <article class="article">
                         <h1>Présentation !</h1>
                         <p>
                             Bienvenue sur notre site "Rubik's 2d", nous allons vous aider à la réalisation de votre Rubik's cube 3x3.
-                        </p>
-                        <h3>Des problèmes de navigation ?</h3>
-                        <p>
+                      </p>
+                            <h3>Des problèmes de navigation ?</h3>
+                            <p>
                             Si vous n'arrivez pas à voir les cubes animés de ce site, il s'agit probablement d'un souci de compatibilité WEBGL. Dans ce cas, suivez ce lien pour tester l'installation de WEBGL dans votre navigateur.
                             Si l'utilisation d'Internet Explorer vous pose problème, nous vous proposons de cliquer sur le lien suivant pour <a href="https://www.mozilla.org/fr/firefox/new/">installer Firefox</a>
                         </p>
@@ -60,42 +64,54 @@
                         </p>
 
                         <h3>Les différentes parties d'une résolution :</h3>
+<<<<<<< HEAD
                         <ul>
-                            <li class="active LiP"><a href="#">Accueil</a></li>
-                            <li class="LiP"><a href="Partie1.html">Faire une croix</a></li>
-                            <li class="LiP"><a href="Partie2.html">Faire les coins(les couronnes)</a></li>
-                            <li class="LiP"><a href="Partie3.html">Faire la deuxieme ligne (le belge)</a></li>
-                            <li class="LiP"><a href="Partie4.html">Faire la croix à l'opposéé de la premiere </a></li>   
-                            <li class="LiP"><a href="Partie5.html">Orientation de la croix </a></li>  
-                            <li class="LiP"><a href="Partie6.html">Tourner les coins</a></li>
-                            <li class="LiP"><a href="Partie7.html">Dernière formule (chaise, chaise inversé)</a></li>                         
-                        </ul> 
-                    </article>
+                            <li class="LiP"><a href="Partie1.html">Faire une croix avec une couleur</a></li>
+                            <li class="LiP"><a href="Partie2.html">Faire la première face</a></li>
+                            <li class="LiP"><a href="Partie3.html">Faire le deuxième étages</a></li>
+                            <li class="LiP"><a href="Partie4.html">Faire la croix avec la couleur à l'opposé de la premiere</a></li>
+                            <li class="LiP"><a href="Partie5.html">Tourner les coins</a></li>
+                            <li class="LiP"><a href="Partie6.html">Faire la dernière formule</a></li>                         
+                        </ul>
                         <h2 id="Les_webmasters">Les webmasters</h2>
                         <div class="vignette" style="width: 40%;">
-                            <strong>Marco Fernandes</strong>
+                            <strong>Fernandes</strong>
                         </div>
                         <div class="vignette" style="width: 40%;">
-                            <strong>Romain Perreti</strong>
+                            <strong>Perreti</strong>
                         </div>
                         <div class="vignette" style="width: 40%;">
-                            <strong>Yannis Perrin</strong>
-                        </div>                    
+                            <strong>Perrin</strong>
+                        </div>
+                        
+                        
+=======
+                        <ol>
+                            <li>Faire la croix</li>
+                            <li>Faire les coins (les couronnes)</li>
+                            <li>Faire la deuxième ligne (le belge)</li>
+                            <li>Faire la croix a l'opposé de la premiere</li>
+                            <li>Orientation de la croix (chaise)</li>
+                            <li>Tourner les coins</li>
+                            <li>Dernière formule (chaise, chaise inversé)</li>
+                        </ol>
+>>>>>>> asd
                     </article>
                 </section>
+
             </div>
-            <div class="col-xs-12 col-md-6">
-                <section>
-                    <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
-                </section>
+            <!--<div class="col-xs-1 col-md-1"></div>-->
+            <div class="col-xs-12 col-md-6 sectGauche">
+                <!--<image src="http://www.comparestoreprices.co.uk/images/dr/drumond-park-original-rubiks-cube.jpg"  alt="test" class="img-responsive inlineBlock">-->
+                <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
             </div>
         </div>
-
-
         <div class="row">
+            <!--<div class="col-xs-1 col-md-1"></div>-->
             <div class="col-xs-12 col-md-12 myFooter" >
                 <footer><i><b>&COPY;Rubik's-Peretti-Perrin-Fernandes-CFPT-2017</b></i></footer>
             </div>
+            <!--<div class="col-xs-1 col-md-1"></div>-->
         </div>
 
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
