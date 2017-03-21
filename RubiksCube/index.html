@@ -23,13 +23,23 @@
                 </div>
                 <div class="collapse navbar-collapse " id="myNavbar" >
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Accueil</a></li>
-                        <li><a href="Partie1.html">Partie 1</a></li>
-                        <li><a href="Partie2.html">Partie 2</a></li> 
-                        <li><a href="Partie3.html">Partie 3</a></li> 
-                        <li><a href="Partie4.html">Partie 4</a></li>
-                        <li><a href="Partie5.html">Partie 5</a></li> 
-                        <li><a href="Partie6.html">Partie 6</a></li> 
+                        <li class="active"><a href="#">Accueil</a></li>
+                        <li class="dropdown">                            
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                                Partie
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="Partie1.html">Partie 1</a></li>
+                                <li><a href="Partie2.html">Partie 2</a></li> 
+                                <!--<li class="divider"></li>-->
+                                <li><a href="Partie3.html">Partie 3</a></li>
+                                <li><a href="Partie4.html">Partie 4</a></li>
+                                <li><a href="Partie5.html">Partie 5</a></li>            
+                                <li><a href="Partie6.html">Partie 6</a></li> 
+                                <li><a href="Partie7.html">Partie 7</a></li>
+                            </ul>
+                        </li>
                     </ul>
                     <!--
                     Ajouter si besoin.
@@ -46,22 +56,21 @@
                 <section>
                     <article class="article">
                         <h1>Présentation !</h1>
-                        <p>
+                        <p class="LargP">
                             Bienvenue sur notre site "Rubik's 2d", nous allons vous aider à la réalisation de votre Rubik's cube 3x3.
                         </p>
                         <h3>Des problèmes de navigation ?</h3>
-                        <p>
+                            <p class="LargP">
                             Si vous n'arrivez pas à voir les cubes animés de ce site, il s'agit probablement d'un souci de compatibilité WEBGL. Dans ce cas, suivez ce lien pour tester l'installation de WEBGL dans votre navigateur.
                             Si l'utilisation d'Internet Explorer vous pose problème, nous vous proposons de cliquer sur le lien suivant pour <a href="https://www.mozilla.org/fr/firefox/new/">installer Firefox</a>
                         </p>
                         <h3>Résumé</h3>
-                        <p>
+                        <p class="LargP">
                             Nous allons vous présenter les différentes parties pour résoudre un rubik's cube.
                         </p>
 
                         <h3>Les différentes parties d'une résolution :</h3>
-                        <ul>
-                            <li class="active LiP"><a href="#">Accueil</a></li>
+                        <ul>                          
                             <li class="LiP"><a href="Partie1.html">Faire une croix</a></li>
                             <li class="LiP"><a href="Partie2.html">Faire les coins(les couronnes)</a></li>
                             <li class="LiP"><a href="Partie3.html">Faire la deuxieme ligne (le belge)</a></li>
@@ -71,7 +80,7 @@
                             <li class="LiP"><a href="Partie7.html">Dernière formule (chaise, chaise inversé)</a></li>                         
                         </ul> 
                     </article>
-                        <h2 id="Les_webmasters">Les webmasters</h2>
+                        <h3 id="Les_webmasters">Les webmasters</h3>
                         <div class="vignette" style="width: 40%;">
                             <strong>Marco Fernandes</strong>
                         </div>
@@ -84,8 +93,8 @@
                     </article>
                 </section>
             </div>
-            <div class="col-xs-12 col-md-6">
-                <section>
+            
+            <div class="col-xs-12 col-md-6 sectGauche"  >
                     <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
                 </section>
             </div>

@@ -3,18 +3,23 @@
     //height: 760px; 
     //padding-right: 26px;
     padding-bottom: 5px
-    
 }
 
 .sectGauche{
     border: 1px solid black;  
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .myFooter{
     text-align: center;
     border: 1px solid black;
+<<<<<<< HEAD
+    margin-top: 5px;
+}
+body{
+   padding-top: 60px;
+=======
+>>>>>>> slt2
 }
 .article{
     padding-left: 10px;
@@ -22,7 +27,4 @@
 .LiP{
     list-style: none;
     padding-top: 1px;
-}
-.LargP{
-    padding-right: 25px;
 }
