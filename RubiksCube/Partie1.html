@@ -65,7 +65,7 @@
                 </section>
             </div>
             <div class="col-xs-12 col-md-6 inlineBlock">
-                <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
+                <canvas id="rubiks2D" class="inlineBlock"></canvas>
                 <button id="pauseBtn">Run</button>
                 <label id="moveLbl">0</label>
                 <input id="moveSlider" type="range">
@@ -84,43 +84,96 @@
         <script>
             //variables 
             var pauseBtn = document.getElementById("pauseBtn");
-            var moveSet = [new Move("Front", true), new Move("Left", true), new Move("Top", false)];
+            var moveLbl = document.getElementById("moveLbl");
+            var moveSlider = document.getElementById("moveSlider");
+            var moveSet = [new Move("Front", true), new Move("Left", true), new Move("Up", true)];
 
             var timeout;
             var runAuto = false;
             var moveInc = 1;
             var count = 0;
-            var timeoutLength = 2000;
+            var targetCount = -1;
+            var tempTimeoutLength;
+            ;
+            var timeoutLength = 1000;
+
+            moveSlider.min = 0;
+            moveSlider.max = moveSet.length;
+            moveSlider.value = moveSlider.min;
 
             //input functions :
-            pauseBtnFn = function () {
+            function pauseBtnOnClickFn() {
                 runAuto = !runAuto;
-                
+                runChange();
+            }
+            ;
+
+            function moveSliderOnChangeFn() {
+                targetCount = parseInt(moveSlider.value);
+                if (count < targetCount) {
+                    moveInc = 1;
+                } else if (count > targetCount) {
+                    moveInc = -1;
+                }
+                tempTimeoutLength = timeoutLength;
+                timeoutLength = 100;
+                runAuto = true;
+                runChange();
+            }
+            ;
+
+            pauseBtn.addEventListener("click", pauseBtnOnClickFn);
+            moveSlider.addEventListener("change", moveSliderOnChangeFn);
+
+            //output functions :       
+            function turnface() {
+                debugger;
+                if (moveInc === -1) {
+                    count += moveInc;
+                    cube.turnFace(moveSet[count].faceToTurn, !moveSet[count].clockwise);
+                } else {
+                    cube.turnFace(moveSet[count].faceToTurn, moveSet[count].clockwise);
+                    count += moveInc;
+                }
+
+                clearTimeout(timeout);
+
+                if (runAuto) {
+                    timeout = setTimeout(turnface, timeoutLength);
+                }
+                if (count >= moveSet.length && count <= 0) {
+                    if (count === moveSet.length) {
+                        count = moveSet.length - 1;
+                    } else {
+                        count = 0;
+                    }
+
+                    runAuto = false;
+                    runChange();
+                }
+                moveLbl.innerHTML = count;
+                if (targetCount === count) {
+                    targetCount = -1;
+                    runAuto = false;
+                    runChange();
+                    timeoutLenght = tempTimeoutLength;
+                }
+                if (targetCount === -1) {
+                    moveSlider.value = count;
+                }
+            }
+            ;
+
+            function runChange() {
                 if (runAuto) {
                     pauseBtn.innerHTML = "Pause";
                     timeout = setTimeout(turnface, timeoutLength);
-                }
-                else {
+                } else {
                     pauseBtn.innerHTML = "Run";
                     clearTimeout(timeout);
                 }
-            };
-
-            pauseBtn.addEventListener("click", pauseBtnFn);
-
-
-            //output functions :       
-            turnface = function () {
-                debugger;
-                count += moveInc;
-                cube.turnFace(moveSet[count].faceToTurn, moveSet[count].clockWise);
-                if (runAuto) {
-                    clearTimeout(timeout);
-                    if (count < moveSet.length) {
-                        timeout = setTimeout(turnface, timeoutLength);
-                    }
-                }
-            };
+            }
+            ;
         </script>
     </body>
 </html>

@@ -636,6 +636,8 @@ function DrawFace(offsetX, offsetY, face) {
 }
 window.onload = function () {
     setEvent();
+    canvas.width = $("canvas").width();
+    canvas.height = $("canvas").height();
 };
 window.onresize = function () {
     setEvent();

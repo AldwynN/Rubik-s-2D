@@ -29,6 +29,11 @@
     
 }
 
+#rubiks2D{
+    width: 100%;
+    height: 25vh;
+}
+
 img{
     margin-bottom: 5px;
 }
