@@ -1,8 +1,5 @@
 .sectDroite{
-    border: 1px solid black;   
-    //height: 760px; 
-    //padding-right: 26px;
-    padding-bottom: 5px
+    border: 1px solid black;
     
 }
 
@@ -35,3 +32,6 @@
 img{
     margin-bottom: 5px;
 }
+.Asid{
+    padding-left: 10px;
+    
