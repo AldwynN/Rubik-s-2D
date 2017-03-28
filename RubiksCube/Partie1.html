@@ -64,9 +64,11 @@
                     </article>
                 </section>
             </div>
-            <div class="col-xs-12 col-md-6 sectGauche">
-                <!--<image src="http://www.comparestoreprices.co.uk/images/dr/drumond-park-original-rubiks-cube.jpg"  alt="test" class="img-responsive inlineBlock">-->
+            <div class="col-xs-12 col-md-6 inlineBlock">
                 <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
+                <button id="pauseBtn">Run</button>
+                <label id="moveLbl">0</label>
+                <input id="moveSlider" type="range">
             </div>
         </div>
         <div class="row">
@@ -78,6 +80,47 @@
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
-        <script src="js/rubik.js"></script>
+        <script src="js/rubik.js"></script>        
+        <script>
+            //variables 
+            var pauseBtn = document.getElementById("pauseBtn");
+            var moveSet = [new Move("Front", true), new Move("Left", true), new Move("Top", false)];
+
+            var timeout;
+            var runAuto = false;
+            var moveInc = 1;
+            var count = 0;
+            var timeoutLength = 2000;
+
+            //input functions :
+            pauseBtnFn = function () {
+                runAuto = !runAuto;
+                
+                if (runAuto) {
+                    pauseBtn.innerHTML = "Pause";
+                    timeout = setTimeout(turnface, timeoutLength);
+                }
+                else {
+                    pauseBtn.innerHTML = "Run";
+                    clearTimeout(timeout);
+                }
+            };
+
+            pauseBtn.addEventListener("click", pauseBtnFn);
+
+
+            //output functions :       
+            turnface = function () {
+                debugger;
+                count += moveInc;
+                cube.turnFace(moveSet[count].faceToTurn, moveSet[count].clockWise);
+                if (runAuto) {
+                    clearTimeout(timeout);
+                    if (count < moveSet.length) {
+                        timeout = setTimeout(turnface, timeoutLength);
+                    }
+                }
+            };
+        </script>
     </body>
 </html>
