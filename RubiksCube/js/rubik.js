@@ -6,6 +6,13 @@ script.src = './js/jquery-3.1.1.js';
 script.type = 'text/javascript';
 document.getElementsByTagName('head')[0].appendChild(script);
 
+class Move {
+    constructor(faceToTurn, clockWise) {
+        this.faceToTurn = faceToTurn;
+        this.clockwise = clockWise;
+    }
+}
+
 class Face {
     constructor(x, y, tailleCarre, nbFaceX, nbFaceY, faceName) {
         this.faceName = faceName;
@@ -498,11 +505,12 @@ function handleEnd(event) {
 
     for (var i = 0; i < touches.length; i++) {
         var idx = ongoingTouchIndexById(touches[i].identifier);
-        if (idx >= 0) {
-            console.log("touchEnd");
+        if (idx >= 0) {           
             var x = ongoingTouches[idx].pageX - $("#rubiks2D").offset().left;
             var y = ongoingTouches[idx].pageY - $("#rubiks2D").offset().top;
-
+            
+            console.log("touchEnd : x " + x + " , y" + y);
+            
             clickControl(x, y, 0);
             ongoingTouches.splice(idx, 1);  // remove it; we're done
         }
@@ -628,7 +636,11 @@ function DrawFace(offsetX, offsetY, face) {
 }
 window.onload = function () {
     setEvent();
+    canvas.width = $("canvas").width();
+    canvas.height = $("canvas").height();
 };
 window.onresize = function () {
     setEvent();
+    canvas.width = $("canvas").width();
+    canvas.height = $("canvas").height();
 };
