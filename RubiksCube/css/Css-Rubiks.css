@@ -1,12 +1,16 @@
 .sectDroite{
     border: 1px solid black;
-    
 }
 
 .sectGauche{
     border: 1px solid black;  
     margin-bottom: 5px;
-    padding-bottom: 5px;
+}
+.sectInfo{
+    border: 1px solid black;  
+    margin-bottom: 5px;
+    height: 100px;
+    padding-right: 20px;
 }
 
 .myFooter{
@@ -37,7 +41,16 @@
 img{
     margin-bottom: 5px;
 }
-.Asid{
+.Asid
+{
     padding-left: 10px;
-}  
 }
+       
+.titre
+{
+ padding-left: 30px;    
+ }
+  
+ canvas{
+     margin-top: 5px;
+ }
