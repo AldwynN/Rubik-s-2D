@@ -32,7 +32,6 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li class="active"><a href="#">Partie 1</a></li>                              
                                 <li><a href="Partie2.html">Partie 2</a></li> 
-                                <!--<li class="divider"></li>-->
                                 <li><a href="Partie3.html">Partie 3</a></li>
                                 <li><a href="Partie4.html">Partie 4</a></li>
                                 <li><a href="Partie5.html">Partie 5</a></li>    
@@ -55,19 +54,20 @@
 
             <div class="col-xs-12 col-md-6 sectDroite">
                 
-                    <article class="article">
-                        <h2>Faire une croix</h2>
-                        <p class="LargP">
-                            Dans cette partie il va falloir faire la croix blanche, il faudra aussi faire attention a que les arêtes touchent le coté blanc et le coté de sa couleur.
-                        </p>
-                        <img src="image/croixBlanche.jpg" width="250" height="250">
-                    </article>
+                <article class="article">
+                    <h2>Faire une croix</h2>
+                    <p class="LargP">
+                        Dans cette partie il va falloir faire la croix blanche, il faudra aussi faire attention a que les arêtes touchent le coté blanc et le coté de sa couleur.
+                    </p>
+                    <img alt="croixBlanche" src="image/croixBlanche.jpg" width="250" height="250">
+                </article>
                
             </div>
             <div class="col-xs-12 col-md-6 inlineBlock">
                 <canvas id="rubiks2D" class="inlineBlock"></canvas>
+                <button id="resetBtn">Reset</button>
                 <button id="pauseBtn">Run</button>
-                <label id="moveLbl">0</label>
+                <label id="moveLbl">0 / 0</label>
                 <input id="moveSlider" type="range">
             </div>
         <!--</div>-->
@@ -80,10 +80,11 @@
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
-        <script src="js/rubik.js"></script>        
+        <script src="./js/rubik.js"></script>        
         <script>
             //variables 
             var pauseBtn = document.getElementById("pauseBtn");
+            var resetBtn = document.getElementById("resetBtn");
             var moveLbl = document.getElementById("moveLbl");
             var moveSlider = document.getElementById("moveSlider");
             var moveSet = [new Move("Front", true), new Move("Left", true), new Move("Up", true)];
@@ -94,12 +95,12 @@
             var count = 0;
             var targetCount = -1;
             var tempTimeoutLength;
-            ;
             var timeoutLength = 1000;
 
             moveSlider.min = 0;
             moveSlider.max = moveSet.length;
             moveSlider.value = moveSlider.min;
+            moveLbl.innerHTML = count + " / " + moveSet.length;
 
             //input functions :
             function pauseBtnOnClickFn() {
@@ -107,7 +108,11 @@
                 runAuto = !runAuto;
                 runChange();
             }
-            ;
+
+            function resetBtnOnClickFn() {
+                moveSlider.value = moveSlider.min;
+                moveSliderOnChangeFn();
+            }
 
             function moveSliderOnChangeFn() {
                 targetCount = parseInt(moveSlider.value);
@@ -121,14 +126,13 @@
                 runAuto = true;
                 runChange();
             }
-            ;
 
             pauseBtn.addEventListener("click", pauseBtnOnClickFn);
+            resetBtn.addEventListener("click", resetBtnOnClickFn);
             moveSlider.addEventListener("change", moveSliderOnChangeFn);
 
             //output functions :       
             function turnface() {
-                debugger;
                 if (moveInc === -1) {
                     count += moveInc;
                     cube.turnFace(moveSet[count].faceToTurn, !moveSet[count].clockwise);
@@ -142,28 +146,25 @@
                 if (runAuto) {
                     timeout = setTimeout(turnface, timeoutLength);
                 }
-                if (count >= moveSet.length && count <= 0) {
-                    if (count === moveSet.length) {
-                        count = moveSet.length - 1;
-                    } else {
+                if (count >= moveSet.length || count <= 0) {
+                    if (count !== moveSet.length) {
                         count = 0;
                     }
 
                     runAuto = false;
                     runChange();
                 }
-                moveLbl.innerHTML = count;
+                moveLbl.innerHTML = count + " / " + moveSet.length;
                 if (targetCount === count) {
                     targetCount = -1;
                     runAuto = false;
                     runChange();
-                    timeoutLenght = tempTimeoutLength;
+                    timeoutLength = tempTimeoutLength;
                 }
                 if (targetCount === -1) {
                     moveSlider.value = count;
                 }
             }
-            ;
 
             function runChange() {
                 if (runAuto) {
@@ -174,7 +175,6 @@
                     clearTimeout(timeout);
                 }
             }
-            ;
         </script>
     </body>
 </html>

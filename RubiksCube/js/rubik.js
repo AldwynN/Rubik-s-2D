@@ -1,6 +1,5 @@
 //Made by Yannis Perrin
 //last changes : 13 jan 2017
-
 var script = document.createElement('script');
 script.src = './js/jquery-3.1.1.js';
 script.type = 'text/javascript';
@@ -33,6 +32,27 @@ class Face {
             }
         }
     }
+    
+    buildFromValues(s){
+        var ints = s.split(";");
+        var count = 0;
+        for (var x = 0; x < this.face.length; x++) {
+            for (var y = 0; y < this.face[x].length; y++) {
+                this.face[x][y] = parseInt(ints[count]);
+                count++;
+            }
+        }
+    }
+    
+    getValues(){
+        var s = "";
+        for (var x = 0; x < this.face.length; x++) {
+            for (var y = 0; y < this.face[x].length; y++) {
+                s += this.face[x][y] + ";";
+            }
+        }
+        return s;
+    }
 }
 
 class Cube {
@@ -49,6 +69,32 @@ class Cube {
         this.faceUp.fill(4);
         this.faceDown = new Face(2 * offset + 3 * tailleCarre, 3 * offset + 6 * tailleCarre, tailleCarre, 3, 3, "Down");
         this.faceDown.fill(5);
+    }
+
+    buildFromValues(s){
+        var end = 18;
+        this.faceLeft.buildFromValues(s.substring(end-18,end));
+        end += 18;
+        this.faceFront.buildFromValues(s.substring(end-18,end));
+        end += 18;
+        this.faceRight.buildFromValues(s.substring(end-18,end));
+        end += 18;
+        this.faceBack.buildFromValues(s.substring(end-18,end));
+        end += 18;
+        this.faceUp.buildFromValues(s.substring(end-18,end));
+        end += 18;
+        this.faceDown.buildFromValues(s.substring(end-18,end));
+    }
+
+    getValues(){
+        var s = "";
+        s += this.faceLeft.getValues();
+        s += this.faceFront.getValues();
+        s += this.faceRight.getValues();
+        s += this.faceBack.getValues();
+        s += this.faceUp.getValues();
+        s += this.faceDown.getValues();
+        return s;
     }
 
     turnCube(nameFace, clockwise = true) {
@@ -438,7 +484,7 @@ class Cube {
     }
 }
 
-
+var controls = false;
 var canvas = document.getElementById('rubiks2D');
 var context = canvas.getContext('2d');
 var tailleCarre = 25;
@@ -483,6 +529,7 @@ function setEvent() {
     el.addEventListener("touchstart", handleStart, false);
     el.addEventListener("touchend", handleEnd, false);
     el.addEventListener("touchcancel", handleCancel, false);
+
 }
 
 function handleStart(event) {
@@ -505,12 +552,12 @@ function handleEnd(event) {
 
     for (var i = 0; i < touches.length; i++) {
         var idx = ongoingTouchIndexById(touches[i].identifier);
-        if (idx >= 0) {           
+        if (idx >= 0) {
             var x = ongoingTouches[idx].pageX - $("#rubiks2D").offset().left;
             var y = ongoingTouches[idx].pageY - $("#rubiks2D").offset().top;
-            
+
             console.log("touchEnd : x " + x + " , y" + y);
-            
+
             clickControl(x, y, 0);
             ongoingTouches.splice(idx, 1);  // remove it; we're done
         }
@@ -635,12 +682,16 @@ function DrawFace(offsetX, offsetY, face) {
     }
 }
 window.onload = function () {
-    setEvent();
+    if (controls) {
+        setEvent();
+    } 
     canvas.width = $("canvas").width();
     canvas.height = $("canvas").height();
 };
 window.onresize = function () {
-    setEvent();
+    if (controls) {
+        setEvent();
+    }
     canvas.width = $("canvas").width();
     canvas.height = $("canvas").height();
 };

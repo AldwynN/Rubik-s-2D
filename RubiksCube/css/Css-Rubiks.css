@@ -46,11 +46,13 @@ img{
     padding-left: 10px;
 }
        
+.inlineBlock{
+    display: inlineBlock;
+}
 .titre
 {
- padding-left: 30px;    
- }
-  
+ padding-left: 30px;   
+}
  canvas{
      margin-top: 5px;
  }
