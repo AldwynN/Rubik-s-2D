@@ -40,7 +40,7 @@
                                 <li><a href="Partie7.html">Partie 7</a></li>
                             </ul>
                         </li>
-                        
+
                     </ul>
                     <!--
                     Ajouter si besoin.
@@ -53,65 +53,171 @@
             </div>
         </nav>
         <!--<div class="row">-->
-            <!--<div class="col-xs-1 col-md-1"></div>-->
+        <!--<div class="col-xs-1 col-md-1"></div>-->
 
-            <div class="col-xs-12 col-md-6 sectDroite">
-                
-                    <article class="article">
-                        <h2>Faire la croix à l'opposée de la premiere</h2>
-                        <h4>Si la face jaune a juste un cube jaune au milieu, il faut faire ceci.</h4>
-                        <ol class="LargOl">
-                            <li>Mettez la face jaune vers le haut, puis tourner la face vers vous a droite</li>
-                            <li>Montez le coté droit vers le haut</li>
-                            <li>Tournez la face du haut vers la gauche</li>
-                            <li>Baissez le coté droit vers le bas</li>
-                            <li>Ramennez la face du haut vers la droite</li>
-                            <li>Puis abaissez le coté face à vous vers la gauche</li>
-                        </ol> 
-                        
-                        <p>Vous devez avoir un "l" a l'envers/une virgule, laissez le coté de droite de la face jaune libre et rafaites les points jusqu'à obtenir une ligne jaune. Quand vous aurez la ligne mettez la</p>
-                        
-                        <img src="image/virgule.jpg" width="250" height="250">
-                        
-                        <img src="image/ligne.jpg" width="250" height="250">
-                        
-                        <br>
-                        
-                        <h3>Astuce !</h3>
-                        <h4>Si vous avez le "l" à l'envers/une virgule mettez aussi le coté droit de la face jaune libre et faites les points suivant et vous obtiendrez directement la croix.</h4>
-                        <ol>
-                            <li>Levez la face devant vous vers la droite</li>
-                            <li>Tournez la face jaune vers la gauche</li>
-                            <li>Montez le coté droit</li>
-                            <li>Rammenez la face jaune à droite</li>
-                            <li>Descendez le coté droit</li>
-                            <li>Abaissez la face devant vous vers la gauche</li>        
-                        </ol>
-                        
-                        <img src="image/croixJauneMal.jpg" width="250" height="250">
-                        
-                    </article>
-                
+        <div class="col-xs-12 col-md-6 sectDroite">
 
-            </div>
-            <!--<div class="col-xs-1 col-md-1"></div>-->
-            <div class="col-xs-12 col-md-6 sectGauche">
-                <!--<image src="http://www.comparestoreprices.co.uk/images/dr/drumond-park-original-rubiks-cube.jpg"  alt="test" class="img-responsive inlineBlock">-->
-                <canvas id="rubiks2D" class="inlineBlock" width="500" height="500"></canvas>
-            </div>
-        <!--</div>
-        <div class="row">-->
-            <!--<div class="col-xs-1 col-md-1"></div>-->
-            <div class="col-xs-12 col-md-12 myFooter">
-                <footer><i><b>&COPY;Rubik's-Peretti-Perrin-Fernandes-CFPT-2017</b></i></footer>
-            </div>
-            <!--<div class="col-xs-1 col-md-1"></div>-->
+            <article class="article">
+                <h2>Faire la croix à l'opposée de la premiere</h2>
+                <h4>Si la face jaune a juste un cube jaune au milieu, il faut faire ceci.</h4>
+                <ol class="LargOl">
+                    <li>Mettez la face jaune vers le haut, puis tourner la face vers vous a droite</li>
+                    <li>Montez le coté droit vers le haut</li>
+                    <li>Tournez la face du haut vers la gauche</li>
+                    <li>Baissez le coté droit vers le bas</li>
+                    <li>Ramennez la face du haut vers la droite</li>
+                    <li>Puis abaissez le coté face à vous vers la gauche</li>
+                </ol> 
+
+                <p>Vous devez avoir un "l" a l'envers/une virgule, laissez le coté de droite de la face jaune libre et rafaites les points jusqu'à obtenir une ligne jaune. Quand vous aurez la ligne mettez la</p>
+
+                <img alt="virgule" src="image/virgule.jpg" width="250" height="250">
+
+                <img alt="ligne" src="image/ligne.jpg" width="250" height="250">
+
+                <br>
+
+                <h3>Astuce !</h3>
+                <h4>Si vous avez le "l" à l'envers/une virgule mettez aussi le coté droit de la face jaune libre et faites les points suivant et vous obtiendrez directement la croix.</h4>
+                <ol>
+                    <li>Levez la face devant vous vers la droite</li>
+                    <li>Tournez la face jaune vers la gauche</li>
+                    <li>Montez le coté droit</li>
+                    <li>Rammenez la face jaune à droite</li>
+                    <li>Descendez le coté droit</li>
+                    <li>Abaissez la face devant vous vers la gauche</li>        
+                </ol>
+
+                <img alt="croixJauneMal" src="image/croixJauneMal.jpg" width="250" height="250">
+
+            </article>
+
+
+        </div>
+        <div class="col-xs-12 col-md-6 inlineBlock">
+            <canvas id="rubiks2D" class="inlineBlock"></canvas>
+            <button id="resetBtn">Reset</button>
+            <button id="pauseBtn">Run</button>
+            <label id="moveLbl">0 / 0</label>
+            <input id="moveSlider" type="range">
+        </div>
         <!--</div>-->
-
+        <!-- <div class="row">-->
+        <div class="col-xs-12 col-md-12 myFooter">
+            <footer><i><b>&COPY;Rubik's-Peretti-Perrin-Fernandes-CFPT-2017</b></i></footer>
+        </div>         
+        <!--</div>-->
         <!-- jQuery first, then Tether, then Bootstrap JS. -->
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
-        <script src="js/rubik.js"></script>
+        <script src="./js/rubik.js"></script>        
+        <script>
+            //variables 
+            var pauseBtn = document.getElementById("pauseBtn");
+            var resetBtn = document.getElementById("resetBtn");
+            var moveLbl = document.getElementById("moveLbl");
+            var moveSlider = document.getElementById("moveSlider");
+            var moveSet = [new Move("Front", true),
+                new Move("Front", true),
+                new Move("Front", true),
+                new Move("Up", false),
+                new Move("Up", false),
+                new Move("Up", true),
+                new Move("Front", false),
+                new Move("Right", true),
+                new Move("Down", false),
+                new Move("Down", false),
+                new Move("Right", true),
+                new Move("Down", true)];
+
+            var timeout;
+            var runAuto = false;
+            var moveInc = 1;
+            var count = 0;
+            var targetCount = -1;
+            var tempTimeoutLength;
+            var timeoutLength = 1000;
+
+            cube.buildFromValues("1;3;3;1;0;2;3;5;3;5;2;5;0;1;1;4;5;4;0;0;3;2;2;0;2;1;1;4;5;5;4;3;4;2;5;0;5;0;0;2;4;4;1;3;1;2;1;4;4;5;3;2;3;0;");
+            moveSlider.min = 0;
+            moveSlider.max = moveSet.length;
+            moveSlider.value = moveSlider.min;
+            moveLbl.innerHTML = count + " / " + moveSet.length;
+
+            //input functions :
+            function pauseBtnOnClickFn() {
+                moveInc = 1;
+                runAuto = !runAuto;
+                runChange();
+            }
+
+            function resetBtnOnClickFn() {
+                moveSlider.value = moveSlider.min;
+                moveSliderOnChangeFn();
+            }
+
+            function moveSliderOnChangeFn() {
+                targetCount = parseInt(moveSlider.value);
+                if (count < targetCount) {
+                    moveInc = 1;
+                } else if (count > targetCount) {
+                    moveInc = -1;
+                }
+                tempTimeoutLength = timeoutLength;
+                timeoutLength = 100;
+                runAuto = true;
+                runChange();
+            }
+
+            pauseBtn.addEventListener("click", pauseBtnOnClickFn);
+            resetBtn.addEventListener("click", resetBtnOnClickFn);
+            moveSlider.addEventListener("change", moveSliderOnChangeFn);
+
+            //output functions :       
+            function turnface() {
+                if (moveInc === -1) {
+                    count += moveInc;
+                    cube.turnFace(moveSet[count].faceToTurn, !moveSet[count].clockwise);
+                } else {
+                    cube.turnFace(moveSet[count].faceToTurn, moveSet[count].clockwise);
+                    count += moveInc;
+                }
+
+                clearTimeout(timeout);
+
+                if (runAuto) {
+                    timeout = setTimeout(turnface, timeoutLength);
+                }
+                if (count >= moveSet.length || count <= 0) {
+                    if (count !== moveSet.length) {
+                        count = 0;
+                    }
+
+                    runAuto = false;
+                    runChange();
+                }
+                moveLbl.innerHTML = count + " / " + moveSet.length;
+                if (targetCount === count) {
+                    targetCount = -1;
+                    runAuto = false;
+                    runChange();
+                    timeoutLength = tempTimeoutLength;
+                }
+                if (targetCount === -1) {
+                    moveSlider.value = count;
+                }
+            }
+
+            function runChange() {
+                if (runAuto) {
+                    pauseBtn.innerHTML = "Pause";
+                    timeout = setTimeout(turnface, timeoutLength);
+                } else {
+                    pauseBtn.innerHTML = "Run";
+                    clearTimeout(timeout);
+                }
+            }
+        </script>
     </body>
 </html>

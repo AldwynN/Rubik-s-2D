@@ -279,6 +279,8 @@ class Cube {
                     this.faceDown.face[0][0] = temp[0];
                     this.faceDown.face[0][1] = temp[1];
                     this.faceDown.face[0][2] = temp[2];
+                    
+                    console.log("new Move(\"Left\", true),");
                 } else {
                     this.turnFace("Left");
                     this.turnFace("Left");
@@ -318,6 +320,8 @@ class Cube {
                     this.faceDown.face[0][0] = temp[2];
                     this.faceDown.face[1][0] = temp[1];
                     this.faceDown.face[2][0] = temp[0];
+                    
+                    console.log("\"Front\", true");
                 } else {
                     this.turnFace("Front");
                     this.turnFace("Front");
@@ -357,6 +361,8 @@ class Cube {
                     this.faceDown.face[2][0] = temp[2];
                     this.faceDown.face[2][1] = temp[1];
                     this.faceDown.face[2][2] = temp[0];
+                    
+                    console.log("\"Right\", true");
                 } else {
                     this.turnFace("Right");
                     this.turnFace("Right");
@@ -396,6 +402,8 @@ class Cube {
                     this.faceUp.face[0][0] = temp[0];
                     this.faceUp.face[1][0] = temp[1];
                     this.faceUp.face[2][0] = temp[2];
+                    
+                    console.log("\"Back\", true");
                 } else {
                     this.turnFace("Back");
                     this.turnFace("Back");
@@ -435,6 +443,8 @@ class Cube {
                     this.faceBack.face[0][0] = temp[0];
                     this.faceBack.face[1][0] = temp[1];
                     this.faceBack.face[2][0] = temp[2];
+                    
+                    console.log("\"Up\", true");
                 } else {
                     this.turnFace("Up");
                     this.turnFace("Up");
@@ -474,6 +484,8 @@ class Cube {
                     this.faceFront.face[0][2] = temp[0];
                     this.faceFront.face[1][2] = temp[1];
                     this.faceFront.face[2][2] = temp[2];
+                    
+                    console.log("\"Down\", true");
                 } else {
                     this.turnFace("Down");
                     this.turnFace("Down");
@@ -534,7 +546,7 @@ function setEvent() {
 
 function handleStart(event) {
     event.preventDefault();
-    console.log("touchStart");
+    //console.log("touchStart");
     var touches = event.changedTouches;
 
     for (var i = 0; i < touches.length; i++) {
@@ -556,7 +568,7 @@ function handleEnd(event) {
             var x = ongoingTouches[idx].pageX - $("#rubiks2D").offset().left;
             var y = ongoingTouches[idx].pageY - $("#rubiks2D").offset().top;
 
-            console.log("touchEnd : x " + x + " , y" + y);
+            //console.log("touchEnd : x " + x + " , y" + y);
 
             clickControl(x, y, 0);
             ongoingTouches.splice(idx, 1);  // remove it; we're done
@@ -566,7 +578,7 @@ function handleEnd(event) {
 
 function handleCancel(event) {
     event.preventDefault();
-    console.log("touchCancel");
+    //console.log("touchCancel");
     var touches = event.changedTouches;
 
     for (var i = 0; i < touches.length; i++) {
@@ -593,7 +605,7 @@ function clickControl(x, y, click) {
     elements.forEach(function (element) {
         if (y > element.Y && y < element.Y + element.sizeY
                 && x > element.X && x < element.X + element.sizeX) {
-            console.log("clicked cube" + element.faceName);
+            //console.log("clicked cube" + element.faceName);
             if (click === 0) {
                 cube.turnFace(element.faceName);
             } else if (click === 2) {
@@ -604,7 +616,7 @@ function clickControl(x, y, click) {
 }
 
 function touchControl(id) {
-    console.log("touchControl");
+    //console.log("touchControl");
     var idx = ongoingTouchIndexById(id);
     if (idx >= 0) {
         var x = ongoingTouches[idx].pageX - $("#rubiks2D").offset().left;
